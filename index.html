@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Du✦Vibe — Creative Agency (Graphic & Video)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="lang-en">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- LOGO - plain text (not a link) -->
+      <div class="brand-text">Du✦Vibe</div>
+
+      <!-- top nav (desktop) -->
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="#services"><span class="en">Services</span><span class="ar">الخدمات</span></a>
+        <a class="nav-link" href="#packages"><span class="en">Packages</span><span class="ar">الباقات</span></a>
+        <a class="nav-link" href="#skills"><span class="en">Skills</span><span class="ar">الخدمات الفردية</span></a>
+        <a class="nav-link" href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a>
+      </nav>
+
+      <div class="controls">
+        <!-- Region placeholder (plain word) + actual select (select can be shown/used by JS) -->
+        <div class="region-wrap">
+          <!-- visible placeholder text (shows initially) -->
+          <button id="region-placeholder" class="region-placeholder" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="en">Select country</span><span class="ar">اختر الدولة</span>
+          </button>
+
+          <!-- hidden/select options (JS will show/open this when user clicks placeholder) -->
+          <select id="region-select" aria-label="Region select" style="display:none;">
+  <option value="eg" data-en="EGY" data-ar="مصر">EGY</option>
+  <option value="aoc" data-en="AOC" data-ar="أي دولة أخرى">AOC</option>
+</select>
+
+        </div>
+
+        <!-- Language toggle -->
+        <button id="lang-toggle" class="btn-ghost lang-btn" aria-label="Switch language">
+          <span class="en">AR</span><span class="ar">EN</span>
+        </button>
+
+        <!-- 3-dots / mobile toggle -->
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu (positioned dynamically) -->
+    <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+      <a href="#services" class="nav-link"><span class="en">Services</span><span class="ar">الخدمات</span></a>
+      <a href="#packages" class="nav-link"><span class="en">Packages</span><span class="ar">الباقات</span></a>
+      <a href="#skills" class="nav-link"><span class="en">Skills</span><span class="ar">الخدمات الفردية</span></a>
+      <a href="#contact" class="nav-link"><span class="en">Contact</span><span class="ar">تواصل</span></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero section">
+    <div class="container hero-grid">
+      <div class="hero-left reveal">
+        <!-- Big centered brand in hero as requested -->
+        <h1 class="hero-main-logo">Du✦Vibe</h1>
+        <!-- Requested Arabic line under brand -->
+        <p class="hero-line-ar">تصميمات ومونتاج احترافي تجذب جمهورك</p>
+
+        <!-- Keep original hero subtitle (both languages) as requested -->
+        <p class="hero-sub" style="text-align:center; max-width:900px; margin:10px auto 18px;">
+          <span class="en">We create thumbnails, videos, and full visual identities for teachers, creators, brands and more.</span>
+          <span class="ar">نقدم ثامبنيلات، مونتاج، وهويات بصرية احترافية للمدرسين، صناع المحتوى، والشركات.</span>
+        </p>
+
+        <div class="hero-ctas" style="text-align:center;">
+          <a class="btn btn-primary" href="#packages"><span class="en">View Packages</span><span class="ar">عرض الباقات</span></a>
+          <a class="btn btn-outline" id="whatsapp-cta" href="https://wa.me/201126989979" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="en">Contact</span><span class="ar">تواصل</span>
+          </a>
+        </div>
+
+        <div class="hero-meta" style="text-align:center; margin-top:14px;">
+          <div class="meta-item" style="display:inline-block; margin:0 8px;"><strong>•</strong> <span class="en">Quick turnaround</span><span class="ar">تسليم سريع</span></div>
+          <div class="meta-item" style="display:inline-block; margin:0 8px;"><strong>•</strong> <span class="en">High quality</span><span class="ar">دقة احترافية</span></div>
+          <div class="meta-item" style="display:inline-block; margin:0 8px;"><strong>•</strong> <span class="en">Revisions included</span><span class="ar">تعديلات متاحة</span></div>
+        </div>
+      </div>
+
+      <!-- hero-right image removed as requested -->
+    </div>
+  </section>
+
+  <!-- SERVICES: single sentence under title -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;"><span class="en">Who We Serve</span><span class="ar">من نخدم</span></h2>
+
+      <p class="services-text reveal" style="text-align:center; max-width:900px; margin:0 auto;">
+        <span class="en">We proudly serve anyone who needs professional visuals — from single thumbnails to full brand identity and pro video edits.</span>
+        <span class="ar">نحن نخدم أي جهة أو فرد يحتاج تصميمات ومونتاج احترافي يوصل رسالته.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="section packages">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;"><span class="en">Packages</span><span class="ar">الباقات</span></h2>
+
+      <div class="packages-top" style="text-align:center; margin-bottom:12px;">
+        <p class="small-note">
+          <span class="en">Prices shown per region.</span>
+          <span class="ar">الأسعار حسب المنطقة.</span>
+        </p>
+      </div>
+
+      <!-- NOTE: 'مسودة' removed as requested -->
+
+      <div class="packages-grid">
+
+        <!-- Teachers -->
+        <article class="pkg-section reveal">
+          <h3 class="pkg-title"><span class="en">Teachers</span><span class="ar">قسم المدرسين</span></h3>
+          <div class="pkg-cards">
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Basic</span><span class="ar">عادي</span></div>
+                <!-- data-price-eg / data-price-usd used for JS switching -->
+                <div class="price" data-id="teachers-basic" data-price-eg="1200 EGP" data-price-usd="$40">1200 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Thumbnail + 1 revision</span><span class="ar">صورة مصغرة + تعديل واحد</span></li>
+                <li><span class="en">Up to 3 min video edits</span><span class="ar">مونتاج حتى 3 دقائق</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Teachers" data-tier="Basic"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Pro</span><span class="ar">برو</span></div>
+                <div class="price" data-id="teachers-pro" data-price-eg="2500 EGP" data-price-usd="$100">2500 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Custom thumbnail + 2 revisions</span><span class="ar">ثامبنيل مخصص + تعديلين</span></li>
+                <li><span class="en">Up to 8 min video edits</span><span class="ar">مونتاج حتى 8 دقائق</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Teachers" data-tier="Pro"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card vip">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">VIP</span><span class="ar">VIP</span></div>
+                <div class="price" data-id="teachers-vip" data-price-eg="4500 EGP" data-price-usd="$180">4500 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Priority delivery + 4 revisions</span><span class="ar">أولوية تسليم + 4 تعديلات</span></li>
+                <li><span class="en">Full branding kit</span><span class="ar">حزمة هوية كاملة</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Teachers" data-tier="VIP"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Content Creators -->
+        <article class="pkg-section reveal">
+          <h3 class="pkg-title"><span class="en">Content Creators</span><span class="ar">قسم صناع المحتوى</span></h3>
+          <div class="pkg-cards">
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">YouTube — Basic</span><span class="ar">باكدج يوتيوب - عادي</span></div>
+                <div class="price" data-id="yt-basic" data-price-eg="1500 EGP" data-price-usd="$60">1500 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Thumbnail + Basic edit</span><span class="ar">ثامبنيل + مونتاج بسيط</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Creators" data-tier="YouTube Basic"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Reels — Pro</span><span class="ar">باكدج ريلز - برو</span></div>
+                <div class="price" data-id="reels-pro" data-price-eg="900 EGP" data-price-usd="$35">900 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Trendy edit + 2 versions</span><span class="ar">مونتاج تريندي + نسختين</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Creators" data-tier="Reels Pro"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card vip">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">YouTube VIP</span><span class="ar">باكدج يوتيوب - VIP</span></div>
+                <div class="price" data-id="yt-vip" data-price-eg="4200 EGP" data-price-usd="$160">4200 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Full editing + thumbnails + brand kit</span><span class="ar">مونتاج كامل + ثامبنيلات + حزمة هوية</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Creators" data-tier="YouTube VIP"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Brands -->
+        <article class="pkg-section reveal">
+          <h3 class="pkg-title"><span class="en">Brands & Companies</span><span class="ar">براندز وشركات</span></h3>
+          <div class="pkg-cards">
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Basic</span><span class="ar">عادي</span></div>
+                <div class="price" data-id="brand-basic" data-price-eg="2000 EGP" data-price-usd="$75">2000 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Logo refresh + 3 assets</span><span class="ar">تحديث شعار + 3 عناصر</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Brands" data-tier="Basic"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Pro</span><span class="ar">برو</span></div>
+                <div class="price" data-id="brand-pro" data-price-eg="3600 EGP" data-price-usd="$130">3600 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Brand assets + social kit</span><span class="ar">عناصر العلامة + حزمة سوشيال</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Brands" data-tier="Pro"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card vip">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">VIP</span><span class="ar">VIP</span></div>
+                <div class="price" data-id="brand-vip" data-price-eg="6200 EGP" data-price-usd="$230">6200 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Full brand identity + ads</span><span class="ar">هوية كاملة + إعلانات</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Brands" data-tier="VIP"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Restaurants -->
+        <article class="pkg-section reveal">
+          <h3 class="pkg-title"><span class="en">Restaurants</span><span class="ar">قسم المطاعم</span></h3>
+          <div class="pkg-cards">
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Basic</span><span class="ar">عادي</span></div>
+                <div class="price" data-id="rest-basic" data-price-eg="1100 EGP" data-price-usd="$42">1100 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Menu design + promo image</span><span class="ar">تصميم منيو + صورة ترويجية</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Restaurants" data-tier="Basic"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Pro</span><span class="ar">برو</span></div>
+                <div class="price" data-id="rest-pro" data-price-eg="2200 EGP" data-price-usd="$85">2200 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Menu + promo video</span><span class="ar">منيو + فيديو ترويجي</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Restaurants" data-tier="Pro"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card vip">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">VIP</span><span class="ar">VIP</span></div>
+                <div class="price" data-id="rest-vip" data-price-eg="3500 EGP" data-price-usd="$135">3500 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Full kit + ads</span><span class="ar">حزمة كاملة + إعلانات</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Restaurants" data-tier="VIP"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Medical -->
+        <article class="pkg-section reveal">
+          <h3 class="pkg-title"><span class="en">Medical</span><span class="ar">القسم الطبي</span></h3>
+          <div class="pkg-cards">
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Basic</span><span class="ar">عادي</span></div>
+                <div class="price" data-id="med-basic" data-price-eg="1800 EGP" data-price-usd="$70">1800 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Professional visuals for clinics</span><span class="ar">مواد احترافية للعيادات</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Medical" data-tier="Basic"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">Pro</span><span class="ar">برو</span></div>
+                <div class="price" data-id="med-pro" data-price-eg="3000 EGP" data-price-usd="$115">3000 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Clinic kit + promo video</span><span class="ar">باكدج للعيادة + فيديو ترويجي</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Medical" data-tier="Pro"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+            <div class="pkg-card vip">
+              <div class="pkg-head">
+                <div class="tier"><span class="en">VIP</span><span class="ar">VIP</span></div>
+                <div class="price" data-id="med-vip" data-price-eg="4800 EGP" data-price-usd="$180">4800 EGP</div>
+              </div>
+              <ul class="pkg-features">
+                <li><span class="en">Full medical branding kit</span><span class="ar">هوية طبية كاملة</span></li>
+              </ul>
+              <button class="btn btn-primary start-btn" data-category="Medical" data-tier="VIP"> <span class="en">Start Now</span><span class="ar">ابدأ الآن</span> </button>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS (Individual Services) -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;"><span class="en">To Inquire About Individual Services</span><span class="ar">للاستفسار عن الخدمات الفردية</span></h2>
+      <div class="skills-grid" style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <div class="skill-card reveal" style="max-width:320px; width:100%;">
+          <h3><span class="en">Graphic Design</span><span class="ar">جرافيك ديزاين</span></h3>
+          <!-- no price; direct WA link (hidden number behind link) -->
+          <a class="btn btn-primary" href="https://wa.me/201126989979" target="_blank" rel="noopener noreferrer"><span class="en">Start Now</span><span class="ar">اضغط الآن</span></a>
+        </div>
+        <div class="skill-card reveal" style="max-width:320px; width:100%;">
+          <h3><span class="en">Video Editing</span><span class="ar">مونتاج فيديو</span></h3>
+          <a class="btn btn-primary" href="https://wa.me/201010464059" target="_blank" rel="noopener noreferrer"><span class="en">Start Now</span><span class="ar">اضغط الآن</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (plain text under "Are You Ready?") -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid reveal" style="text-align:center;">
+      <h2 class="section-title"><span class="en">Are You Ready to Start?</span><span class="ar">مستعد تبدأ؟</span></h2>
+      <p class="lead" style="max-width:900px; margin:0 auto;"><span class="en">Choose the package that fits you and let’s start now.</span><span class="ar">اختر الباقة المناسبة وابدأ الآن.</span></p>
+    </div>
+  </section>
+
+  <!-- Footer (centered text) -->
+  <footer class="site-footer">
+    <div class="container footer-inner" style="flex-direction:column; text-align:center;">
+      <div class="brand-row">
+        <div class="brand-text">Du✦Vibe</div>
+      </div>
+      <div style="margin-top:10px; color:var(--muted);">© <span id="year"></span> DuoVibe. <span class="en">All rights reserved.</span><span class="ar">كل الحقوق محفوظة.</span></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
+
